@@ -22,6 +22,4 @@ jobs:
           aws-region: eu-west-2
       
       - name: Deploy
-        run: aws s3 sync $GITHUB_WORKSPACE s3://dparkinson.co.uk \
-              --exclude '.git' \
-              --exclude '.github'
+        run: aws s3 sync $GITHUB_WORKSPACE s3://dparkinson.co.uk --exclude '.git' --exclude '.github' --delete
