@@ -12,24 +12,24 @@
     <script src="https://kit.fontawesome.com/9c45cfe8e5.js" crossorigin="anonymous"></script>
     <script>
         window.addEventListener('load', function() {
-            var spans = document.querySelectorAll('span.date');
+            let spans = document.querySelectorAll('span.date');
 
-            for(var i = 0; i < spans.length; i++) {
-                var startDate = new Date(spans[i].dataset.startDate);
+            for(let i = 0; i < spans.length; i++) {
+                let startDate = new Date(spans[i].dataset.startDate);
 
-                var endDate = new Date();
+                let endDate = new Date();
                 if (spans[i].dataset.endDate !== '')
                     endDate = new Date(spans[i].dataset.endDate);
 
-                var timeDiff = endDate.getTime() - startDate.getTime();
+                let timeDiff = endDate.getTime() - startDate.getTime();
 
-                var approxSecondsInYear = (1000 * 60 * 60 * 24 * 365);
-                var approxSecondsInMonth = (1000 * 60 * 60 * 24 * 30);
+                let approxSecondsInYear = (1000 * 60 * 60 * 24 * 365);
+                let approxSecondsInMonth = (1000 * 60 * 60 * 24 * 30);
 
-                var diffYears = Math.floor(timeDiff / approxSecondsInYear);
-                var diffMonths = Math.floor((timeDiff % approxSecondsInYear) / approxSecondsInMonth)
+                let diffYears = Math.floor(timeDiff / approxSecondsInYear);
+                let diffMonths = Math.floor((timeDiff % approxSecondsInYear) / approxSecondsInMonth);
 
-                spans[i].innerHTML = spans[i].textContent + ' &bull; ' + 
+                spans[i].innerHTML = spans[i].innerHTML + ' &bull; ' + 
                     diffYears + (diffYears > 1 ? ' years ' : ' year ') + 
                     diffMonths + (diffMonths > 1 ? ' months' : ' month');
             }
@@ -40,7 +40,7 @@
 <body>
     <header>
         <a href="/" id="logo" title="Home">
-            <img src="img/avatar.gif" width="20" height="20" alt="Avatar Logo" />
+            <img src="/img/avatar.gif" width="20" height="20" alt="Avatar Logo" />
         </a>
         <nav>
             <a href="#" title="About"><i class="fas fa-user"></i>About</a>
